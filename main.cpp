@@ -11,5 +11,11 @@ int main(int argc, char **argv)
     window.show();
     window.setWindowTitle(QApplication::translate("toplevel", "Top-level widget"));
 
+    QPushButton *button = new QPushButton(
+        QApplication::translate("childwidget", "Press me"),
+        &window);
+    button->move(100, 100);
+    button->show();
+
     return app.exec();
 }
