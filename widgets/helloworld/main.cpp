@@ -8,14 +8,14 @@ int main(int argc, char **argv)
 
     QWidget window;
     window.resize(320, 240);
-    window.show();
     window.setWindowTitle(QApplication::translate("toplevel", "Top-level widget"));
+    window.show();
 
-    QPushButton *button = new QPushButton(
-        QApplication::translate("childwidget", "Press me"),
-        &window);
-    button->move(100, 100);
-    button->show();
+    QLabel *label = new QLabel("Hello, World!");
+    label->setAlignment(Qt::AlignCenter);
+
+    QLayout *layout = new QBoxLayout(QBoxLayout::Direction::TopToBottom, &window);
+    layout->addWidget(label);
 
     return app.exec();
 }
