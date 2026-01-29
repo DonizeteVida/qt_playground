@@ -9,10 +9,4 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Widgets)
 
 qt_standard_project_setup()
 
-qt_add_executable(qt_helloworld main.cpp)
-
-target_link_libraries(
-    qt_helloworld
-    PRIVATE
-    Qt${QT_VERSION_MAJOR}::Core
-    Qt${QT_VERSION_MAJOR}::Widgets)
+add_subdirectory(widgets/helloworld)
